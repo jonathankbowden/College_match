@@ -14,7 +14,7 @@ export const colleges: College[] = [
     studentBody: "~17,000 students",
     mascot: "Cardinal (the color, not the bird)",
     knownFor: ["Tech & startups", "Beautiful campus", "D1 athletics", "Research"],
-    scores: { adventure: 7, creativity: 9, ambition: 10, community: 6, independence: 8, curiosity: 9, balance: 5 },
+    scores: { adventure: 7, creativity: 9, ambition: 10, community: 6, independence: 8, curiosity: 9, balance: 5, careerFocus: 9, affordability: 6, academicRigor: 9, athletics: 8, socialImpact: 7 },
   },
   {
     id: "howard",
@@ -29,7 +29,7 @@ export const colleges: College[] = [
     studentBody: "~12,000 students",
     mascot: "Bison",
     knownFor: ["HBCU culture", "Political science", "Homecoming", "Alumni network"],
-    scores: { adventure: 6, creativity: 7, ambition: 9, community: 10, independence: 6, curiosity: 7, balance: 7 },
+    scores: { adventure: 6, creativity: 7, ambition: 9, community: 10, independence: 6, curiosity: 7, balance: 7, careerFocus: 8, affordability: 7, academicRigor: 7, athletics: 7, socialImpact: 9 },
   },
   {
     id: "cu-boulder",
@@ -44,7 +44,7 @@ export const colleges: College[] = [
     studentBody: "~35,000 students",
     mascot: "Ralphie the Buffalo",
     knownFor: ["Outdoor lifestyle", "Aerospace engineering", "Music scene", "Sustainability"],
-    scores: { adventure: 10, creativity: 6, ambition: 6, community: 7, independence: 8, curiosity: 7, balance: 9 },
+    scores: { adventure: 10, creativity: 6, ambition: 6, community: 7, independence: 8, curiosity: 7, balance: 9, careerFocus: 6, affordability: 7, academicRigor: 6, athletics: 7, socialImpact: 7 },
   },
   {
     id: "nyu",
@@ -59,7 +59,7 @@ export const colleges: College[] = [
     studentBody: "~52,000 students",
     mascot: "Bobcat",
     knownFor: ["Arts & film", "Business (Stern)", "City life", "Global campuses"],
-    scores: { adventure: 8, creativity: 10, ambition: 9, community: 4, independence: 10, curiosity: 8, balance: 3 },
+    scores: { adventure: 8, creativity: 10, ambition: 9, community: 4, independence: 10, curiosity: 8, balance: 3, careerFocus: 9, affordability: 3, academicRigor: 7, athletics: 2, socialImpact: 7 },
   },
   {
     id: "unc",
@@ -74,7 +74,7 @@ export const colleges: College[] = [
     studentBody: "~31,000 students",
     mascot: "Rameses (Tar Heels)",
     knownFor: ["Basketball", "Journalism", "Public health", "School spirit"],
-    scores: { adventure: 5, creativity: 5, ambition: 8, community: 9, independence: 5, curiosity: 7, balance: 8 },
+    scores: { adventure: 5, creativity: 5, ambition: 8, community: 9, independence: 5, curiosity: 7, balance: 8, careerFocus: 7, affordability: 8, academicRigor: 7, athletics: 9, socialImpact: 7 },
   },
   {
     id: "mit",
@@ -89,7 +89,7 @@ export const colleges: College[] = [
     studentBody: "~11,500 students",
     mascot: "Tim the Beaver",
     knownFor: ["Engineering", "Hacking culture", "Robotics", "Nobel laureates"],
-    scores: { adventure: 6, creativity: 8, ambition: 10, community: 7, independence: 7, curiosity: 10, balance: 3 },
+    scores: { adventure: 6, creativity: 8, ambition: 10, community: 7, independence: 7, curiosity: 10, balance: 3, careerFocus: 9, affordability: 6, academicRigor: 10, athletics: 3, socialImpact: 6 },
   },
   {
     id: "spelman",
@@ -104,7 +104,7 @@ export const colleges: College[] = [
     studentBody: "~2,300 students",
     mascot: "Jaguars",
     knownFor: ["Women's leadership", "STEM programs", "Sisterhood", "Atlanta culture"],
-    scores: { adventure: 4, creativity: 7, ambition: 9, community: 10, independence: 6, curiosity: 8, balance: 7 },
+    scores: { adventure: 4, creativity: 7, ambition: 9, community: 10, independence: 6, curiosity: 8, balance: 7, careerFocus: 8, affordability: 6, academicRigor: 7, athletics: 4, socialImpact: 9 },
   },
   {
     id: "uoregon",
@@ -119,7 +119,7 @@ export const colleges: College[] = [
     studentBody: "~23,000 students",
     mascot: "The Duck",
     knownFor: ["Nike connection", "Track & field", "Journalism", "Pacific Northwest vibes"],
-    scores: { adventure: 8, creativity: 8, ambition: 5, community: 7, independence: 7, curiosity: 6, balance: 8 },
+    scores: { adventure: 8, creativity: 8, ambition: 5, community: 7, independence: 7, curiosity: 6, balance: 8, careerFocus: 6, affordability: 7, academicRigor: 6, athletics: 9, socialImpact: 6 },
   },
   {
     id: "georgetown",
@@ -134,7 +134,7 @@ export const colleges: College[] = [
     studentBody: "~20,000 students",
     mascot: "Jack the Bulldog (Hoyas)",
     knownFor: ["Foreign service", "Politics", "D.C. location", "Basketball"],
-    scores: { adventure: 5, creativity: 5, ambition: 10, community: 8, independence: 6, curiosity: 8, balance: 5 },
+    scores: { adventure: 5, creativity: 5, ambition: 10, community: 8, independence: 6, curiosity: 8, balance: 5, careerFocus: 9, affordability: 4, academicRigor: 8, athletics: 6, socialImpact: 8 },
   },
   {
     id: "usc",
@@ -149,7 +149,7 @@ export const colleges: College[] = [
     studentBody: "~49,000 students",
     mascot: "Tommy Trojan (Traveler the horse)",
     knownFor: ["Film school", "Alumni network", "Greek life", "Football"],
-    scores: { adventure: 7, creativity: 10, ambition: 8, community: 7, independence: 7, curiosity: 6, balance: 5 },
+    scores: { adventure: 7, creativity: 10, ambition: 8, community: 7, independence: 7, curiosity: 6, balance: 5, careerFocus: 8, affordability: 4, academicRigor: 7, athletics: 9, socialImpact: 5 },
   },
   {
     id: "wisconsin",
@@ -164,7 +164,7 @@ export const colleges: College[] = [
     studentBody: "~47,000 students",
     mascot: "Bucky Badger",
     knownFor: ["Research", "Game days", "Lakeside campus", "Dairy science (yes, really)"],
-    scores: { adventure: 7, creativity: 5, ambition: 7, community: 9, independence: 6, curiosity: 8, balance: 8 },
+    scores: { adventure: 7, creativity: 5, ambition: 7, community: 9, independence: 6, curiosity: 8, balance: 8, careerFocus: 7, affordability: 8, academicRigor: 7, athletics: 9, socialImpact: 6 },
   },
   {
     id: "risd",
@@ -179,7 +179,7 @@ export const colleges: College[] = [
     studentBody: "~2,500 students",
     mascot: "Scrotie (look it up -- it's real)",
     knownFor: ["Fine arts", "Industrial design", "Architecture", "Brown cross-enrollment"],
-    scores: { adventure: 5, creativity: 10, ambition: 7, community: 6, independence: 9, curiosity: 9, balance: 4 },
+    scores: { adventure: 5, creativity: 10, ambition: 7, community: 6, independence: 9, curiosity: 9, balance: 4, careerFocus: 8, affordability: 3, academicRigor: 9, athletics: 1, socialImpact: 6 },
   },
   {
     id: "famu",
@@ -194,7 +194,7 @@ export const colleges: College[] = [
     studentBody: "~10,000 students",
     mascot: "Rattlers",
     knownFor: ["Marching 100 band", "Pharmacy program", "HBCU pride", "Greek life"],
-    scores: { adventure: 6, creativity: 7, ambition: 8, community: 10, independence: 5, curiosity: 6, balance: 7 },
+    scores: { adventure: 6, creativity: 7, ambition: 8, community: 10, independence: 5, curiosity: 6, balance: 7, careerFocus: 7, affordability: 8, academicRigor: 6, athletics: 8, socialImpact: 8 },
   },
   {
     id: "cal-poly",
@@ -209,7 +209,7 @@ export const colleges: College[] = [
     studentBody: "~22,000 students",
     mascot: "Musty the Mustang",
     knownFor: ["Learn by Doing", "Engineering", "Architecture", "Wine country location"],
-    scores: { adventure: 8, creativity: 6, ambition: 7, community: 8, independence: 7, curiosity: 7, balance: 9 },
+    scores: { adventure: 8, creativity: 6, ambition: 7, community: 8, independence: 7, curiosity: 7, balance: 9, careerFocus: 9, affordability: 8, academicRigor: 7, athletics: 6, socialImpact: 5 },
   },
   {
     id: "vanderbilt",
@@ -224,7 +224,7 @@ export const colleges: College[] = [
     studentBody: "~13,800 students",
     mascot: "Mr. C (Commodores)",
     knownFor: ["Nashville location", "Pre-med", "Education school", "Greek life"],
-    scores: { adventure: 6, creativity: 7, ambition: 9, community: 8, independence: 5, curiosity: 7, balance: 7 },
+    scores: { adventure: 6, creativity: 7, ambition: 9, community: 8, independence: 5, curiosity: 7, balance: 7, careerFocus: 8, affordability: 5, academicRigor: 8, athletics: 7, socialImpact: 6 },
   },
   {
     id: "uw",
@@ -239,7 +239,7 @@ export const colleges: College[] = [
     studentBody: "~47,000 students",
     mascot: "Harry the Husky",
     knownFor: ["Computer science", "Medicine", "Cherry blossom quad", "Seattle tech scene"],
-    scores: { adventure: 8, creativity: 7, ambition: 8, community: 6, independence: 8, curiosity: 9, balance: 6 },
+    scores: { adventure: 8, creativity: 7, ambition: 8, community: 6, independence: 8, curiosity: 9, balance: 6, careerFocus: 8, affordability: 7, academicRigor: 7, athletics: 7, socialImpact: 6 },
   },
   {
     id: "morehouse",
@@ -254,7 +254,7 @@ export const colleges: College[] = [
     studentBody: "~2,200 students",
     mascot: "Maroon Tigers",
     knownFor: ["MLK's alma mater", "Brotherhood", "Leadership development", "Atlanta University Center"],
-    scores: { adventure: 4, creativity: 6, ambition: 10, community: 10, independence: 5, curiosity: 7, balance: 6 },
+    scores: { adventure: 4, creativity: 6, ambition: 10, community: 10, independence: 5, curiosity: 7, balance: 6, careerFocus: 8, affordability: 6, academicRigor: 7, athletics: 5, socialImpact: 9 },
   },
   {
     id: "ut-austin",
@@ -269,7 +269,7 @@ export const colleges: College[] = [
     studentBody: "~52,000 students",
     mascot: "Bevo the Longhorn",
     knownFor: ["Business (McCombs)", "Engineering", "Football", "Austin culture"],
-    scores: { adventure: 8, creativity: 7, ambition: 8, community: 7, independence: 7, curiosity: 7, balance: 7 },
+    scores: { adventure: 8, creativity: 7, ambition: 8, community: 7, independence: 7, curiosity: 7, balance: 7, careerFocus: 8, affordability: 8, academicRigor: 7, athletics: 9, socialImpact: 6 },
   },
   {
     id: "oberlin",
@@ -284,7 +284,7 @@ export const colleges: College[] = [
     studentBody: "~3,000 students",
     mascot: "Yeomen/Yeowomen",
     knownFor: ["Conservatory of Music", "Progressive history", "Small classes", "Creative arts"],
-    scores: { adventure: 4, creativity: 10, ambition: 6, community: 8, independence: 9, curiosity: 10, balance: 6 },
+    scores: { adventure: 4, creativity: 10, ambition: 6, community: 8, independence: 9, curiosity: 10, balance: 6, careerFocus: 5, affordability: 5, academicRigor: 8, athletics: 3, socialImpact: 10 },
   },
   {
     id: "clemson",
@@ -299,7 +299,7 @@ export const colleges: College[] = [
     studentBody: "~27,000 students",
     mascot: "The Tiger",
     knownFor: ["Football", "Engineering", "Lakeside campus", "Southern hospitality"],
-    scores: { adventure: 6, creativity: 4, ambition: 7, community: 10, independence: 4, curiosity: 5, balance: 8 },
+    scores: { adventure: 6, creativity: 4, ambition: 7, community: 10, independence: 4, curiosity: 5, balance: 8, careerFocus: 7, affordability: 7, academicRigor: 6, athletics: 10, socialImpact: 5 },
   },
   {
     id: "berkeley",
@@ -314,7 +314,7 @@ export const colleges: College[] = [
     studentBody: "~45,000 students",
     mascot: "Oski the Bear (Golden Bears)",
     knownFor: ["STEM", "Social activism", "Research", "Bay Area access"],
-    scores: { adventure: 6, creativity: 7, ambition: 9, community: 6, independence: 9, curiosity: 10, balance: 4 },
+    scores: { adventure: 6, creativity: 7, ambition: 9, community: 6, independence: 9, curiosity: 10, balance: 4, careerFocus: 8, affordability: 7, academicRigor: 9, athletics: 7, socialImpact: 10 },
   },
   {
     id: "colorado-college",
@@ -329,7 +329,7 @@ export const colleges: College[] = [
     studentBody: "~2,200 students",
     mascot: "Prowl the Tiger",
     knownFor: ["Block Plan", "Outdoor culture", "Small classes", "Hockey"],
-    scores: { adventure: 10, creativity: 7, ambition: 6, community: 7, independence: 9, curiosity: 8, balance: 8 },
+    scores: { adventure: 10, creativity: 7, ambition: 6, community: 7, independence: 9, curiosity: 8, balance: 8, careerFocus: 5, affordability: 4, academicRigor: 8, athletics: 5, socialImpact: 7 },
   },
   {
     id: "tulane",
@@ -344,7 +344,7 @@ export const colleges: College[] = [
     studentBody: "~14,000 students",
     mascot: "Riptide (Green Wave)",
     knownFor: ["New Orleans culture", "Public health", "Service learning", "Mardi Gras"],
-    scores: { adventure: 8, creativity: 8, ambition: 7, community: 9, independence: 6, curiosity: 7, balance: 8 },
+    scores: { adventure: 8, creativity: 8, ambition: 7, community: 9, independence: 6, curiosity: 7, balance: 8, careerFocus: 6, affordability: 4, academicRigor: 7, athletics: 6, socialImpact: 8 },
   },
   {
     id: "umich",
@@ -359,7 +359,7 @@ export const colleges: College[] = [
     studentBody: "~48,000 students",
     mascot: "Wolverines",
     knownFor: ["The Big House", "Ross Business School", "Research", "School spirit"],
-    scores: { adventure: 6, creativity: 6, ambition: 9, community: 9, independence: 6, curiosity: 8, balance: 7 },
+    scores: { adventure: 6, creativity: 6, ambition: 9, community: 9, independence: 6, curiosity: 8, balance: 7, careerFocus: 8, affordability: 6, academicRigor: 8, athletics: 10, socialImpact: 7 },
   },
   {
     id: "pomona",
@@ -374,7 +374,7 @@ export const colleges: College[] = [
     studentBody: "~1,800 students",
     mascot: "Cecil Sagehen",
     knownFor: ["Claremont consortium", "Small classes", "SoCal weather", "Graduate school placement"],
-    scores: { adventure: 6, creativity: 7, ambition: 8, community: 8, independence: 7, curiosity: 9, balance: 8 },
+    scores: { adventure: 6, creativity: 7, ambition: 8, community: 8, independence: 7, curiosity: 9, balance: 8, careerFocus: 7, affordability: 6, academicRigor: 9, athletics: 4, socialImpact: 7 },
   },
   {
     id: "astate",
@@ -389,7 +389,7 @@ export const colleges: College[] = [
     studentBody: "~80,000 students",
     mascot: "Sparky the Sun Devil",
     knownFor: ["Innovation", "Online programs", "Sustainability", "Scale with quality"],
-    scores: { adventure: 7, creativity: 6, ambition: 7, community: 6, independence: 8, curiosity: 7, balance: 8 },
+    scores: { adventure: 7, creativity: 6, ambition: 7, community: 6, independence: 8, curiosity: 7, balance: 8, careerFocus: 7, affordability: 9, academicRigor: 6, athletics: 7, socialImpact: 6 },
   },
   {
     id: "bowdoin",
@@ -404,7 +404,7 @@ export const colleges: College[] = [
     studentBody: "~1,900 students",
     mascot: "Polar Bears",
     knownFor: ["Best college food", "Maine coast", "No Greek life", "Environmental studies"],
-    scores: { adventure: 6, creativity: 6, ambition: 7, community: 9, independence: 7, curiosity: 9, balance: 8 },
+    scores: { adventure: 6, creativity: 6, ambition: 7, community: 9, independence: 7, curiosity: 9, balance: 8, careerFocus: 6, affordability: 6, academicRigor: 8, athletics: 4, socialImpact: 7 },
   },
   {
     id: "gatech",
@@ -419,7 +419,7 @@ export const colleges: College[] = [
     studentBody: "~45,000 students",
     mascot: "Buzz (Yellow Jackets)",
     knownFor: ["Engineering", "Computing", "Co-op programs", "Atlanta tech scene"],
-    scores: { adventure: 5, creativity: 6, ambition: 9, community: 7, independence: 7, curiosity: 9, balance: 4 },
+    scores: { adventure: 5, creativity: 6, ambition: 9, community: 7, independence: 7, curiosity: 9, balance: 4, careerFocus: 9, affordability: 8, academicRigor: 9, athletics: 7, socialImpact: 5 },
   },
   {
     id: "middlebury",
@@ -434,7 +434,7 @@ export const colleges: College[] = [
     studentBody: "~2,800 students",
     mascot: "Panthers",
     knownFor: ["Language programs", "International studies", "Skiing", "Environmental focus"],
-    scores: { adventure: 8, creativity: 6, ambition: 7, community: 8, independence: 7, curiosity: 9, balance: 7 },
+    scores: { adventure: 8, creativity: 6, ambition: 7, community: 8, independence: 7, curiosity: 9, balance: 7, careerFocus: 6, affordability: 5, academicRigor: 8, athletics: 5, socialImpact: 8 },
   },
   {
     id: "rice",
@@ -449,7 +449,7 @@ export const colleges: College[] = [
     studentBody: "~8,000 students",
     mascot: "Sammy the Owl",
     knownFor: ["Residential colleges", "Engineering", "Beer Bike", "Houston food scene"],
-    scores: { adventure: 5, creativity: 7, ambition: 9, community: 9, independence: 6, curiosity: 9, balance: 7 },
+    scores: { adventure: 5, creativity: 7, ambition: 9, community: 9, independence: 6, curiosity: 9, balance: 7, careerFocus: 8, affordability: 7, academicRigor: 9, athletics: 4, socialImpact: 6 },
   },
   {
     id: "uvm",
@@ -464,7 +464,7 @@ export const colleges: College[] = [
     studentBody: "~13,500 students",
     mascot: "Rally Cat (Catamounts)",
     knownFor: ["Environmental science", "Burlington culture", "Skiing", "Sustainability"],
-    scores: { adventure: 9, creativity: 6, ambition: 5, community: 8, independence: 8, curiosity: 7, balance: 9 },
+    scores: { adventure: 9, creativity: 6, ambition: 5, community: 8, independence: 8, curiosity: 7, balance: 9, careerFocus: 5, affordability: 6, academicRigor: 6, athletics: 5, socialImpact: 8 },
   },
   {
     id: "duke",
@@ -479,7 +479,7 @@ export const colleges: College[] = [
     studentBody: "~17,000 students",
     mascot: "Blue Devil",
     knownFor: ["Basketball", "Medical school", "Gothic architecture", "Research"],
-    scores: { adventure: 5, creativity: 6, ambition: 10, community: 8, independence: 6, curiosity: 9, balance: 6 },
+    scores: { adventure: 5, creativity: 6, ambition: 10, community: 8, independence: 6, curiosity: 9, balance: 6, careerFocus: 9, affordability: 5, academicRigor: 9, athletics: 9, socialImpact: 7 },
   },
   {
     id: "ucsc",
@@ -494,7 +494,7 @@ export const colleges: College[] = [
     studentBody: "~19,500 students",
     mascot: "Sammy the Slug (no joke -- voted by students)",
     knownFor: ["Marine biology", "Astronomy", "Redwood campus", "Counter-culture"],
-    scores: { adventure: 8, creativity: 8, ambition: 5, community: 7, independence: 9, curiosity: 9, balance: 8 },
+    scores: { adventure: 8, creativity: 8, ambition: 5, community: 7, independence: 9, curiosity: 9, balance: 8, careerFocus: 5, affordability: 7, academicRigor: 6, athletics: 2, socialImpact: 8 },
   },
   {
     id: "notre-dame",
@@ -509,7 +509,7 @@ export const colleges: College[] = [
     studentBody: "~12,600 students",
     mascot: "The Leprechaun (Fighting Irish)",
     knownFor: ["Football", "Catholic tradition", "Alumni loyalty", "Business school"],
-    scores: { adventure: 4, creativity: 4, ambition: 9, community: 10, independence: 4, curiosity: 6, balance: 7 },
+    scores: { adventure: 4, creativity: 4, ambition: 9, community: 10, independence: 4, curiosity: 6, balance: 7, careerFocus: 8, affordability: 5, academicRigor: 8, athletics: 10, socialImpact: 7 },
   },
   {
     id: "savannah-scad",
@@ -524,7 +524,7 @@ export const colleges: College[] = [
     studentBody: "~16,000 students",
     mascot: "The Bees",
     knownFor: ["Art & design", "Historic campus", "Film & animation", "Fashion"],
-    scores: { adventure: 6, creativity: 10, ambition: 7, community: 7, independence: 8, curiosity: 7, balance: 6 },
+    scores: { adventure: 6, creativity: 10, ambition: 7, community: 7, independence: 8, curiosity: 7, balance: 6, careerFocus: 8, affordability: 4, academicRigor: 7, athletics: 3, socialImpact: 5 },
   },
   {
     id: "purdue",
@@ -539,7 +539,7 @@ export const colleges: College[] = [
     studentBody: "~50,000 students",
     mascot: "Purdue Pete (Boilermakers)",
     knownFor: ["Astronauts", "Engineering", "Agriculture", "Affordable tuition"],
-    scores: { adventure: 4, creativity: 4, ambition: 8, community: 8, independence: 5, curiosity: 8, balance: 7 },
+    scores: { adventure: 4, creativity: 4, ambition: 8, community: 8, independence: 5, curiosity: 8, balance: 7, careerFocus: 9, affordability: 8, academicRigor: 8, athletics: 7, socialImpact: 5 },
   },
   {
     id: "whitman",
@@ -554,7 +554,7 @@ export const colleges: College[] = [
     studentBody: "~1,500 students",
     mascot: "Missionaries (Blues)",
     knownFor: ["Outdoor recreation", "Wine country", "Close-knit community", "Debate team"],
-    scores: { adventure: 7, creativity: 6, ambition: 6, community: 9, independence: 7, curiosity: 8, balance: 9 },
+    scores: { adventure: 7, creativity: 6, ambition: 6, community: 9, independence: 7, curiosity: 8, balance: 9, careerFocus: 5, affordability: 5, academicRigor: 7, athletics: 4, socialImpact: 6 },
   },
   {
     id: "howard-payne",
@@ -569,7 +569,7 @@ export const colleges: College[] = [
     studentBody: "~15,000 students",
     mascot: "Swoop the Eagle",
     knownFor: ["Pre-med & health sciences", "CDC proximity", "Goizueta Business School", "Beautiful campus"],
-    scores: { adventure: 4, creativity: 5, ambition: 9, community: 7, independence: 6, curiosity: 9, balance: 6 },
+    scores: { adventure: 4, creativity: 5, ambition: 9, community: 7, independence: 6, curiosity: 9, balance: 6, careerFocus: 8, affordability: 5, academicRigor: 8, athletics: 4, socialImpact: 7 },
   },
   {
     id: "montana",
@@ -584,6 +584,6 @@ export const colleges: College[] = [
     studentBody: "~10,000 students",
     mascot: "Monte (Grizzlies)",
     knownFor: ["Creative writing", "Wildlife biology", "Outdoor recreation", "Fly fishing"],
-    scores: { adventure: 10, creativity: 8, ambition: 4, community: 7, independence: 9, curiosity: 7, balance: 9 },
+    scores: { adventure: 10, creativity: 8, ambition: 4, community: 7, independence: 9, curiosity: 7, balance: 9, careerFocus: 4, affordability: 8, academicRigor: 5, athletics: 6, socialImpact: 6 },
   },
 ];

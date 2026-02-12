@@ -10,6 +10,7 @@ export interface College {
   mascot: string;
   knownFor: string[];
   scores: {
+    // Core vibe dimensions
     adventure: number;
     creativity: number;
     ambition: number;
@@ -17,6 +18,12 @@ export interface College {
     independence: number;
     curiosity: number;
     balance: number;
+    // Optional section dimensions
+    careerFocus: number;
+    affordability: number;
+    academicRigor: number;
+    athletics: number;
+    socialImpact: number;
   };
 }
 
@@ -30,6 +37,14 @@ export interface QuizQuestion {
     scores: Partial<College["scores"]>;
   }[];
   placeholder?: string;
+}
+
+export interface QuizSection {
+  id: string;
+  title: string;
+  description: string;
+  emoji: string;
+  questions: QuizQuestion[];
 }
 
 export interface UserProfile {

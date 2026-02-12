@@ -1,9 +1,9 @@
-import { College, UserProfile } from "./types";
+import { College } from "./types";
 import { colleges } from "@/data/colleges";
 
 type ScoreKey = keyof College["scores"];
 
-const SCORE_KEYS: ScoreKey[] = [
+const ALL_SCORE_KEYS: ScoreKey[] = [
   "adventure",
   "creativity",
   "ambition",
@@ -11,21 +11,31 @@ const SCORE_KEYS: ScoreKey[] = [
   "independence",
   "curiosity",
   "balance",
+  "careerFocus",
+  "affordability",
+  "academicRigor",
+  "athletics",
+  "socialImpact",
 ];
 
 /**
  * Compute cosine similarity between user scores and a college's scores.
- * Returns a value between 0 and 1.
+ * Only considers dimensions where the user has a non-zero score, so
+ * unanswered optional sections don't penalise or bias results.
  */
 function cosineSimilarity(
   userScores: College["scores"],
   collegeScores: College["scores"]
 ): number {
+  // Only use dimensions the user actually scored on
+  const activeKeys = ALL_SCORE_KEYS.filter((k) => userScores[k] !== 0);
+  if (activeKeys.length === 0) return 0;
+
   let dot = 0;
   let magA = 0;
   let magB = 0;
 
-  for (const key of SCORE_KEYS) {
+  for (const key of activeKeys) {
     const a = userScores[key];
     const b = collegeScores[key];
     dot += a * b;
@@ -69,11 +79,11 @@ const KEYWORD_MAP: Record<string, ScoreKey[]> = {
   write: ["creativity", "curiosity"],
   paint: ["creativity"],
   lead: ["ambition"],
-  career: ["ambition"],
+  career: ["ambition", "careerFocus"],
   success: ["ambition"],
-  money: ["ambition"],
-  startup: ["ambition", "independence"],
-  business: ["ambition"],
+  money: ["ambition", "affordability"],
+  startup: ["ambition", "independence", "careerFocus"],
+  business: ["ambition", "careerFocus"],
   friends: ["community"],
   family: ["community"],
   belong: ["community"],
@@ -82,15 +92,31 @@ const KEYWORD_MAP: Record<string, ScoreKey[]> = {
   freedom: ["independence"],
   city: ["independence"],
   learn: ["curiosity"],
-  research: ["curiosity"],
+  research: ["curiosity", "academicRigor"],
   discover: ["curiosity"],
-  science: ["curiosity"],
+  science: ["curiosity", "academicRigor"],
   think: ["curiosity"],
   fun: ["balance"],
   happy: ["balance"],
   chill: ["balance"],
   relax: ["balance"],
   party: ["balance", "community"],
+  athlete: ["athletics"],
+  sport: ["athletics"],
+  team: ["athletics", "community"],
+  compete: ["athletics", "ambition"],
+  justice: ["socialImpact"],
+  equity: ["socialImpact"],
+  environment: ["socialImpact"],
+  climate: ["socialImpact"],
+  volunteer: ["socialImpact", "community"],
+  activism: ["socialImpact"],
+  affordable: ["affordability"],
+  scholarship: ["affordability"],
+  debt: ["affordability"],
+  animal: ["adventure", "curiosity"],
+  vet: ["careerFocus", "curiosity"],
+  biology: ["curiosity", "academicRigor"],
 };
 
 function applyKeywordScores(text: string, scores: College["scores"], weight: number = 1) {
@@ -105,6 +131,26 @@ function applyKeywordScores(text: string, scores: College["scores"], weight: num
 }
 
 /**
+ * Create a zero-initialized scores object.
+ */
+function emptyScores(): College["scores"] {
+  return {
+    adventure: 0,
+    creativity: 0,
+    ambition: 0,
+    community: 0,
+    independence: 0,
+    curiosity: 0,
+    balance: 0,
+    careerFocus: 0,
+    affordability: 0,
+    academicRigor: 0,
+    athletics: 0,
+    socialImpact: 0,
+  };
+}
+
+/**
  * Aggregate quiz answers into a user score profile.
  * Multiple choice answers directly add to scores.
  * Custom free-form answers use keyword matching.
@@ -114,15 +160,7 @@ export function computeScores(
   answers: Record<string, string>,
   questions: { id: string; options?: { label: string; scores: Partial<College["scores"]> }[] }[]
 ): College["scores"] {
-  const scores: College["scores"] = {
-    adventure: 0,
-    creativity: 0,
-    ambition: 0,
-    community: 0,
-    independence: 0,
-    curiosity: 0,
-    balance: 0,
-  };
+  const scores = emptyScores();
 
   for (const question of questions) {
     const answer = answers[question.id];
