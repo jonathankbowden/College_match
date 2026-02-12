@@ -54,9 +54,60 @@ export function rankColleges(userScores: College["scores"]): string[] {
   return scored.map((s) => s.id);
 }
 
+const KEYWORD_MAP: Record<string, ScoreKey[]> = {
+  travel: ["adventure", "independence"],
+  explore: ["adventure", "curiosity"],
+  outdoors: ["adventure", "balance"],
+  nature: ["adventure", "balance"],
+  hike: ["adventure", "balance"],
+  surf: ["adventure", "balance"],
+  art: ["creativity"],
+  music: ["creativity"],
+  film: ["creativity"],
+  design: ["creativity"],
+  create: ["creativity"],
+  write: ["creativity", "curiosity"],
+  paint: ["creativity"],
+  lead: ["ambition"],
+  career: ["ambition"],
+  success: ["ambition"],
+  money: ["ambition"],
+  startup: ["ambition", "independence"],
+  business: ["ambition"],
+  friends: ["community"],
+  family: ["community"],
+  belong: ["community"],
+  people: ["community"],
+  culture: ["community", "creativity"],
+  freedom: ["independence"],
+  city: ["independence"],
+  learn: ["curiosity"],
+  research: ["curiosity"],
+  discover: ["curiosity"],
+  science: ["curiosity"],
+  think: ["curiosity"],
+  fun: ["balance"],
+  happy: ["balance"],
+  chill: ["balance"],
+  relax: ["balance"],
+  party: ["balance", "community"],
+};
+
+function applyKeywordScores(text: string, scores: College["scores"], weight: number = 1) {
+  const lower = text.toLowerCase();
+  for (const [keyword, keys] of Object.entries(KEYWORD_MAP)) {
+    if (lower.includes(keyword)) {
+      for (const key of keys) {
+        scores[key] += weight;
+      }
+    }
+  }
+}
+
 /**
  * Aggregate quiz answers into a user score profile.
  * Multiple choice answers directly add to scores.
+ * Custom free-form answers use keyword matching.
  * The open-ended answer uses keyword matching for a small boost.
  */
 export function computeScores(
@@ -82,54 +133,14 @@ export function computeScores(
       for (const [key, value] of Object.entries(selected.scores)) {
         scores[key as ScoreKey] += value as number;
       }
+    } else {
+      // Custom free-form answer -- use keyword matching with higher weight
+      applyKeywordScores(answer, scores, 2);
     }
   }
 
   // Keyword-based scoring for the open-ended question
-  const openAnswer = (answers["dream"] || "").toLowerCase();
-  const keywordMap: Record<string, ScoreKey[]> = {
-    travel: ["adventure", "independence"],
-    explore: ["adventure", "curiosity"],
-    outdoors: ["adventure", "balance"],
-    nature: ["adventure", "balance"],
-    art: ["creativity"],
-    music: ["creativity"],
-    film: ["creativity"],
-    design: ["creativity"],
-    create: ["creativity"],
-    write: ["creativity", "curiosity"],
-    lead: ["ambition"],
-    career: ["ambition"],
-    success: ["ambition"],
-    money: ["ambition"],
-    startup: ["ambition", "independence"],
-    business: ["ambition"],
-    friends: ["community"],
-    family: ["community"],
-    belong: ["community"],
-    people: ["community"],
-    culture: ["community", "creativity"],
-    freedom: ["independence"],
-    city: ["independence"],
-    learn: ["curiosity"],
-    research: ["curiosity"],
-    discover: ["curiosity"],
-    science: ["curiosity"],
-    think: ["curiosity"],
-    fun: ["balance"],
-    happy: ["balance"],
-    chill: ["balance"],
-    relax: ["balance"],
-    party: ["balance", "community"],
-  };
-
-  for (const [keyword, keys] of Object.entries(keywordMap)) {
-    if (openAnswer.includes(keyword)) {
-      for (const key of keys) {
-        scores[key] += 1;
-      }
-    }
-  }
+  applyKeywordScores(answers["dream"] || "", scores);
 
   return scores;
 }

@@ -11,6 +11,8 @@ export default function QuizPage() {
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [openText, setOpenText] = useState("");
+  const [customText, setCustomText] = useState("");
+  const [showCustomInput, setShowCustomInput] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const question = quizQuestions[currentQ];
@@ -31,6 +33,20 @@ export default function QuizPage() {
     const newAnswers = { ...answers, [question.id]: openText.trim() };
     setAnswers(newAnswers);
     finishQuiz(newAnswers);
+  }
+
+  function handleCustomSubmit() {
+    if (!customText.trim()) return;
+    const newAnswers = { ...answers, [question.id]: customText.trim() };
+    setAnswers(newAnswers);
+    setShowCustomInput(false);
+    setCustomText("");
+
+    if (isLast && question.type === "multiple-choice") {
+      finishQuiz(newAnswers);
+    } else {
+      setTimeout(() => setCurrentQ((q) => q + 1), 300);
+    }
   }
 
   function finishQuiz(finalAnswers: Record<string, string>) {
@@ -76,7 +92,11 @@ export default function QuizPage() {
           </span>
           {currentQ > 0 && (
             <button
-              onClick={() => setCurrentQ((q) => q - 1)}
+              onClick={() => {
+                setShowCustomInput(false);
+                setCustomText("");
+                setCurrentQ((q) => q - 1);
+              }}
               className="text-accent-light hover:underline"
             >
               Back
@@ -103,7 +123,11 @@ export default function QuizPage() {
                 return (
                   <button
                     key={option.label}
-                    onClick={() => handleMCSelect(option.label)}
+                    onClick={() => {
+                      setShowCustomInput(false);
+                      setCustomText("");
+                      handleMCSelect(option.label);
+                    }}
                     className={`flex items-center gap-4 rounded-xl border p-4 text-left transition-all hover:border-accent/50 hover:bg-accent/5 active:scale-[0.98] ${
                       isSelected
                         ? "border-accent bg-accent/10"
@@ -117,6 +141,50 @@ export default function QuizPage() {
                   </button>
                 );
               })}
+
+              {/* Write your own option */}
+              {!showCustomInput ? (
+                <button
+                  onClick={() => setShowCustomInput(true)}
+                  className={`flex items-center gap-4 rounded-xl border p-4 text-left transition-all hover:border-accent/50 hover:bg-accent/5 active:scale-[0.98] ${
+                    answers[question.id] &&
+                    !question.options!.some(
+                      (o) => o.label === answers[question.id]
+                    )
+                      ? "border-accent bg-accent/10"
+                      : "border-card-border bg-card-bg"
+                  }`}
+                >
+                  <span className="text-2xl">✍️</span>
+                  <span className="text-base text-zinc-200">
+                    {answers[question.id] &&
+                    !question.options!.some(
+                      (o) => o.label === answers[question.id]
+                    )
+                      ? answers[question.id]
+                      : "Write your own..."}
+                  </span>
+                </button>
+              ) : (
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    autoFocus
+                    value={customText}
+                    onChange={(e) => setCustomText(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && handleCustomSubmit()}
+                    placeholder="Type your answer..."
+                    className="flex-1 rounded-xl border border-card-border bg-card-bg p-4 text-base text-white placeholder-zinc-500 outline-none transition-colors focus:border-accent"
+                  />
+                  <button
+                    onClick={handleCustomSubmit}
+                    disabled={!customText.trim()}
+                    className="rounded-xl bg-accent px-5 py-4 text-base font-semibold text-white transition-all hover:bg-accent-light disabled:opacity-40"
+                  >
+                    Go
+                  </button>
+                </div>
+              )}
             </div>
           )}
 
